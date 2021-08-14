@@ -10,6 +10,7 @@ import weightloss.dto.diet.response.DietResponseDTO;
 import weightloss.service.DietService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Slf4j
 @RequestMapping("/v1/diet")
@@ -18,6 +19,18 @@ public class DietController {
 
     @Autowired
     private DietService dietService;
+
+    @GetMapping
+    public ResponseEntity<List<DietResponseDTO>> getDietsByUser(@RequestParam Long idUser) {
+
+        log.debug("DietController.saveDiet - Start - idUser: [{}]", idUser);
+
+        var response = dietService.getDietsByUser(idUser);
+
+        log.debug("DietController.saveDiet - Finish - idUser: [{}], response: [{}]", idUser, response);
+
+        return ResponseEntity.ok(response);
+    }
 
     @PostMapping
     public ResponseEntity<DietResponseDTO> saveDiet(@Valid @RequestBody DietRequestDTO request,

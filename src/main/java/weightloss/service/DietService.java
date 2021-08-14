@@ -12,6 +12,9 @@ import weightloss.exception.UserNoExistsException;
 import weightloss.respository.DietRepository;
 import weightloss.respository.UserRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Slf4j
 @Service
 public class DietService {
@@ -40,6 +43,30 @@ public class DietService {
         var response = mapper.map(dietSaved, DietResponseDTO.class);
 
         log.debug("DietService.saveDiet - Finish - Request:  [{}], idUser: [{}], response: [{}]", request, idUser, response);
+
+        return response;
+
+    }
+
+    public List<DietResponseDTO> getDietsByUser(Long idUser) {
+
+        log.debug("DietService.saveDiet - Start - idUser: [{}]", idUser);
+
+        var user = getUserById(idUser);
+
+        var diets = dietRepository.findByUser_id(user.getId());
+
+        var response = new ArrayList<DietResponseDTO>();
+
+        diets.forEach(diet -> {
+
+            var dietResponse = mapper.map(diet, DietResponseDTO.class);
+
+            response.add(dietResponse);
+
+        });
+
+        log.debug("DietService.saveDiet - Finish - idUser: [{}], response: [{}]", idUser, response);
 
         return response;
 

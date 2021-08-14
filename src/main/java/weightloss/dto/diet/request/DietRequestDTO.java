@@ -15,12 +15,14 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class DietRequestDTO {
 
-    @NotNull(message = "O weight é obrigatório")
-    @Size(min = 1, max = 255, message = "O weight deve ter entre 1 e 255 caracteres")
-    private Float weight;
+    @NotNull(message = "O nome é obrigatório")
+    @Size(min = 1, max = 255, message = "O nome deve ter entre 1 e 255 caracteres")
+    private String name;
 
-    @NotNull(message = "O data de início é obrigatória")
+    @NotNull(message = "A data de início é obrigatória")
     @Size(min = 1, max = 255, message = "A data de início deve ter entre 1 e 255 caracteres")
-    private String date;
+    private String start;
+
+    private LocalDateTime finish;
 
 }
