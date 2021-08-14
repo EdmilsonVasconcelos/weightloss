@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import weightloss.dto.accompaniment.request.AccompanimentRequestDTO;
-import weightloss.dto.accompaniment.response.AccompanimentResponsetDTO;
 import weightloss.dto.diet.request.DietRequestDTO;
 import weightloss.dto.diet.response.DietResponseDTO;
 import weightloss.service.DietService;

@@ -6,10 +6,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import weightloss.dto.accompaniment.request.AccompanimentRequestDTO;
-import weightloss.dto.accompaniment.response.AccompanimentResponsetDTO;
+import weightloss.dto.accompaniment.response.AccompanimentResponseDTO;
+import weightloss.dto.accompaniment.response.StatusAccompanimentResponseDTO;
 import weightloss.service.AccompanimentService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Slf4j
 @RequestMapping("/v1/accompaniment")
@@ -19,9 +21,21 @@ public class AccompanimentController {
     @Autowired
     private AccompanimentService accompanimentService;
 
+    @GetMapping
+    public ResponseEntity<List<StatusAccompanimentResponseDTO>> getAccompaniments(@RequestParam Long idDiet) {
+
+        log.debug("AccompanimentController.getAccompaniments - Start - idDiet: [{}]", idDiet);
+
+        var response = accompanimentService.getAccompanimentsByDiet(idDiet);
+
+        log.debug("AccompanimentController.getAccompaniments - Finish - idDiet: [{}], response: [{}]", idDiet, response);
+
+        return ResponseEntity.ok(response);
+    }
+
     @PostMapping
-    public ResponseEntity<AccompanimentResponsetDTO> saveAccompaniment(@Valid @RequestBody AccompanimentRequestDTO request,
-                                                                       @RequestParam Long idDiet) {
+    public ResponseEntity<AccompanimentResponseDTO> saveAccompaniment(@Valid @RequestBody AccompanimentRequestDTO request,
+                                                                      @RequestParam Long idDiet) {
 
         log.debug("AccompanimentController.saveAccompaniment - Start - Request:  [{}], idDiet: [{}]", request, idDiet);
 

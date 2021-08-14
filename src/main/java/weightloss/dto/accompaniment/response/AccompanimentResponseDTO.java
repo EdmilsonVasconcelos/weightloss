@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AccompanimentResponsetDTO {
+public class AccompanimentResponseDTO {
 
     private Long id;
 
