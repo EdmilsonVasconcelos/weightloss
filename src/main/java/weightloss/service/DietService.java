@@ -50,7 +50,7 @@ public class DietService {
 
     public List<DietResponseDTO> getDietsByUser(Long idUser) {
 
-        log.debug("DietService.saveDiet - Start - idUser: [{}]", idUser);
+        log.debug("DietService.getDietsByUser - Start - idUser: [{}]", idUser);
 
         var user = getUserById(idUser);
 
@@ -66,7 +66,7 @@ public class DietService {
 
         });
 
-        log.debug("DietService.saveDiet - Finish - idUser: [{}], response: [{}]", idUser, response);
+        log.debug("DietService.getDietsByUser - Finish - idUser: [{}], response: [{}]", idUser, response);
 
         return response;
 

@@ -23,11 +23,11 @@ public class DietController {
     @GetMapping
     public ResponseEntity<List<DietResponseDTO>> getDietsByUser(@RequestParam Long idUser) {
 
-        log.debug("DietController.saveDiet - Start - idUser: [{}]", idUser);
+        log.debug("DietController.getDietsByUser - Start - idUser: [{}]", idUser);
 
         var response = dietService.getDietsByUser(idUser);
 
-        log.debug("DietController.saveDiet - Finish - idUser: [{}], response: [{}]", idUser, response);
+        log.debug("DietController.getDietsByUser - Finish - idUser: [{}], response: [{}]", idUser, response);
 
         return ResponseEntity.ok(response);
     }
