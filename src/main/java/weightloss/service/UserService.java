@@ -2,8 +2,8 @@ package weightloss.service;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import weightloss.domain.User;
-import weightloss.dto.participant.request.UserRequestDTO;
-import weightloss.dto.participant.response.UserResponseDTO;
+import weightloss.dto.user.request.UserRequestDTO;
+import weightloss.dto.user.response.UserResponseDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

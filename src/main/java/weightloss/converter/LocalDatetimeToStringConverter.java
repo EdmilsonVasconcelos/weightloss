@@ -13,7 +13,10 @@ public class LocalDatetimeToStringConverter extends AbstractConverter<LocalDateT
 
     @Override
     protected String convert(LocalDateTime source) {
-        return source.format(formatter);
+        if(source != null) {
+            return source.format(formatter);
+        }
+        return null;
     }
 
 }

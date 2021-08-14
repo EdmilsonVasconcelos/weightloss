@@ -1,4 +1,4 @@
-package weightloss.dto.participant.request;
+package weightloss.dto.user.request;
 
 import weightloss.enums.Gender;
 import lombok.AllArgsConstructor;
@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.time.LocalDateTime;
 
 @Data
 @Builder

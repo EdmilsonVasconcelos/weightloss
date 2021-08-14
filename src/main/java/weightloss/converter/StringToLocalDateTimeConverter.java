@@ -12,9 +12,12 @@ public class StringToLocalDateTimeConverter extends AbstractConverter<String, Lo
 
     @Override
     protected LocalDateTime convert(String date) {
-        DateTimeFormatter parser = DateTimeFormatter.ofPattern("dd/MM/uuuu");
-        LocalDateTime dateTime = LocalDate.parse(date, parser).atStartOfDay();
-        return dateTime;
+        if(date != null) {
+            DateTimeFormatter parser = DateTimeFormatter.ofPattern("dd/MM/uuuu");
+            LocalDateTime dateTime = LocalDate.parse(date, parser).atStartOfDay();
+            return dateTime;
+        }
+        return null;
     }
 
 }

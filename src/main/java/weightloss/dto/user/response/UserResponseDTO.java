@@ -1,11 +1,9 @@
-package weightloss.dto.participant.response;
+package weightloss.dto.user.response;
 
 import weightloss.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor

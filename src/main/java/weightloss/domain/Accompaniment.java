@@ -9,15 +9,13 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "REGISTER_WEIGHT")
+@Entity(name = "ACCOMPANIMENT")
 @EntityListeners(AuditingEntityListener.class)
-public class RegisterWeight {
+public class Accompaniment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
